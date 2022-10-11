@@ -5,9 +5,9 @@ var greeting = "Hello, playground"
 
 // TTTTTTUUUUUUPPPPPPPLLLLLLLLEEEEEEEE(Tuple)
 
+typealias validDetails = (errorMessage : String?, isValid : Bool)
 
-
-func isvalidUsername(username: String) -> (errorMessage : String?, isValid : Bool) {
+func isvalidUsername(username: String) -> validDetails {
     
     if username.isEmpty {
         return ("Username is empty", false)
@@ -30,7 +30,7 @@ print("isValidUsername2", isValidUserNmae2)
 
 
 
-func isvalidPassword(password: String) -> (errorMessage : String?, isValid : Bool) {
+func isvalidPassword(password: String) -> validDetails {
     
     if password.count < 3 {
         return ("password is too short" , false )
