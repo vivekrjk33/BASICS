@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cek-cv-dLk">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Color Magic-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ColorPresentedVC" customModule="ProtocolsDelegates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grey is boring. Choose the other color!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ9-l7-lS9">
+                                <rect key="frame" x="107" y="344" width="200" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lYg-BF-dFE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IZ9-l7-lS9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RDz-z9-FaW"/>
+                            <constraint firstItem="IZ9-l7-lS9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qbp-s1-ct1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Color Magic" id="jnC-Ts-Bgj">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="YIV-0W-Lnn"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ECN-4Y-OGr">
+                            <connections>
+                                <segue destination="KMe-yC-YVE" kind="show" identifier="presentColorVC" id="o9V-ym-9Pr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="colorNameLbl" destination="IZ9-l7-lS9" id="H08-gH-K6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576.81159420289862" y="103.53260869565219"/>
+        </scene>
+        <!--Color PickerVC-->
+        <scene sceneID="jxZ-Jp-bqJ">
+            <objects>
+                <viewController id="KMe-yC-YVE" customClass="ColorPickerVC" customModule="ProtocolsDelegates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r35-yX-26w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-97-qur">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJ9-Jk-as7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="136.66666666666666"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Green">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="KMe-yC-YVE" eventType="touchUpInside" id="pLH-wW-cOA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQo-Z9-fXY">
+                                        <rect key="frame" x="0.0" y="138.66666666666666" width="414" height="136.99999999999997"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Blue">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="KMe-yC-YVE" eventType="touchUpInside" id="ZlZ-na-0qv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1o-4x-ErS">
+                                        <rect key="frame" x="0.0" y="277.66666666666669" width="414" height="136.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="pink">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="KMe-yC-YVE" eventType="touchUpInside" id="ak3-MA-Mf7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nY1-3v-X4Z">
+                                        <rect key="frame" x="0.0" y="416.33333333333331" width="414" height="136.99999999999994"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Purple">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="KMe-yC-YVE" eventType="touchUpInside" id="wpy-TH-2OE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9d-9Y-M32">
+                                        <rect key="frame" x="0.0" y="555.33333333333337" width="414" height="136.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Yellow">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="KMe-yC-YVE" eventType="touchUpInside" id="OZZ-zK-9mq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a0l-p1-h77"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9JM-97-qur" firstAttribute="leading" secondItem="a0l-p1-h77" secondAttribute="leading" id="Iic-FS-mz0"/>
+                            <constraint firstItem="a0l-p1-h77" firstAttribute="trailing" secondItem="9JM-97-qur" secondAttribute="trailing" id="T2U-gb-U3K"/>
+                            <constraint firstItem="9JM-97-qur" firstAttribute="top" secondItem="a0l-p1-h77" secondAttribute="top" id="ZGV-2l-rzQ"/>
+                            <constraint firstItem="a0l-p1-h77" firstAttribute="bottom" secondItem="9JM-97-qur" secondAttribute="bottom" id="ZxB-6n-Aq7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lbm-Hu-cgs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p4t-0f-KLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1289.8550724637682" y="103.53260869565219"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EPU-Ko-3lu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cek-cv-dLk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0OM-XF-FNi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yGX-2m-pHm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RvH-LU-WnY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90" y="104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
