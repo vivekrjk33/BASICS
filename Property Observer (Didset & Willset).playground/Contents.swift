@@ -5,12 +5,15 @@ var greeting = "Hello, playground"
 //--------------------------------USING STRUCTURE-----------------------------
 
 struct Bank {
+   
     var accountBalance:Double {
+        
         didSet{
             sendMessageUser()
         }
         willSet (newAccountValue){
             
+            print(newAccountValue)
             if newAccountValue >= 100000{
                 print("DANGER--------")
             }
@@ -39,9 +42,10 @@ bank.addMoney(amount: 18000)
 
 
 
+
 //--------------------------------USING CLASS-----------------------------
 
- class Bank {
+ class Bank2 {
     
     var accountBalance:Double {
         
@@ -78,6 +82,7 @@ bank.addMoney(amount: 18000)
 }
 
 
-let amount = Bank(openinBalance: 10000.0)
+let amount = Bank2(openinBalance: 10000.0)
 amount.addMoney(amount: 555656565)
+
 
